@@ -54,6 +54,10 @@
     .check { width: 18px; height: 18px; border-radius: 6px; background: #1f2834; border: 1px solid #2a3646; display: inline-grid; place-items: center; margin-top: 2px; }
     footer { padding: 28px 0 12px; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--line); margin-top: 24px; }
     .small { font-size: 0.9rem; }
+      /* Pills / badges */
+    .badges { display:flex; flex-wrap:wrap; gap:8px; }
+    .badge { font-size:0.85rem; border:1px solid var(--line); padding:6px 10px; border-radius:999px; color:var(--muted); }
+    .pill { font-size:0.85rem; border:1px solid var(--line); padding:6px 10px; border-radius:999px; color:var(--muted); display:inline-flex; align-items:center; gap:8px; }
   </style>
 </head>
 <body>
@@ -76,7 +80,7 @@
     <section class="hero">
       <div>
         <h2>Make sense of the numbers. Keep your focus on the work.</h2>
-        <p>My name’s <strong>Marc MacArthur</strong>. I can help your small business stay organized and on top of its books — so you can concentrate on running it. I have practical experience with <strong>Sage 50 (Canadian)</strong> and use it regularly to handle the day‑to‑day needs of small businesses.</p>
+        <p>My name is <strong>Marc MacArthur</strong>. I help small businesses stay organized and on top of their books so you can concentrate on running the work that matters. I’m familiar with <strong>Sage 50 (Canadian)</strong> and use it where appropriate for day‑to‑day bookkeeping.</p>
         <div class="badges">
           <span class="badge">Bank & card reconciliations</span>
           <span class="badge">Payables & receipts</span>
@@ -88,7 +92,6 @@
         <p class="muted small" style="margin-top:10px">I’m not a CPA and I don’t offer tax filing or assurance services — I focus on accurate daily records you and your accountant can trust.</p>
         <div style="margin-top:14px; display:flex; gap:10px; flex-wrap: wrap;">
           <a class="btn primary" href="#contact">Request a quote</a>
-          <a class="btn" href="#scope">What I do & don’t do</a>
         </div>
       </div>
       <div class="card">
@@ -110,32 +113,12 @@
         <div class="card"><h3>Simple Reports</h3><p class="muted">Vendor summaries, expense breakdowns, and period‑end snapshots your accountant can use.</p></div>
       </div>
     </section>
-
-    <section id="scope" class="section">
-      <h2>Scope & Boundaries</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>What I Do</h3>
-          <ul class="list">
-            <li><span class="check" aria-hidden="true"></span><div>Day‑to‑day entry in Sage 50 (Canadian)</div></li>
-            <li><span class="check" aria-hidden="true"></span><div>Bank & credit card reconciliations</div></li>
-            <li><span class="check" aria-hidden="true"></span><div>Accounts payable tracking & vendor statements</div></li>
-            <li><span class="check" aria-hidden="true"></span><div>Basic payroll data entry</div></li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>What I Don’t Do</h3>
-          <p class="muted">I’m not a CPA. I don’t offer tax preparation or assurance services. I focus on accurate records that support good business decisions.</p>
-        </div>
-      </div>
-    </section>
-
     <section id="about" class="section">
       <h2>About</h2>
       <div class="grid cols-2">
         <div class="card">
-          <h3>A practical, self‑taught approach</h3>
-          <p class="muted">I came to bookkeeping through hands‑on experience rather than formal schooling. That’s given me a clear, straightforward approach — neat records, timely updates, and open communication.</p>
+          <h3>A practical approach, with local guidance</h3>
+          <p class="muted">I learned bookkeeping through hands‑on work, supported by some one‑on‑one guidance from an experienced local bookkeeper. The result is a clear, straightforward style — neat records, timely updates, and open communication.</p>
         </div>
         <div class="card">
           <h3>Tools & Workflow</h3>
@@ -148,7 +131,7 @@
       <h2>Contact</h2>
       <div class="grid cols-2">
         <div class="card contact">
-          <p class="muted">Based in Prince Edward Island. Available remotely across the Maritimes.</p>
+          <p class="muted">Based in Prince Edward Island.</p>
           <div>
             <strong>Email</strong><br/>
             <a href="mailto:ledger@fromgravelhill.ca">ledger@fromgravelhill.ca</a>
