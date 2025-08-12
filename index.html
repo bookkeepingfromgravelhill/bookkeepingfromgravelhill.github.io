@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ledger — From Gravel Hill | Bookkeeping on PEI</title>
+  <meta name="description" content="Friendly, reliable bookkeeping for small businesses on PEI. Invoicing, reconciliations, payables, simple reporting, and Sage 50 (Canadian) support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --fg: #e9edf2;
+      --muted: #b7c0cc;
+      --primary: #89b4fa; /* gentle blue */
+      --accent: #f2cc8f;  /* warm lantern glow */
+      --card: #101419;
+      --line: #222833;
+    }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #0a0c10 0%, #0c1117 100%);
+      color: var(--fg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.65;
+    }
+
+    .container { max-width: 1000px; padding: 24px; margin: 0 auto; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--fg); }
+    .brand h1 { font-size: 1.1rem; margin: 0; letter-spacing: 0.2px; font-weight: 600; }
+    .tag { color: var(--muted); font-size: 0.95rem; margin-top: 2px; }
+
+    .btn { display: inline-block; padding: 12px 18px; border: 1px solid var(--line); background: #141a22; color: var(--fg); border-radius: 12px; text-decoration: none; font-weight: 600; }
+    .btn:hover { border-color: var(--primary); box-shadow: 0 0 0 3px #89b4fa22; }
+    .btn.primary { background: linear-gradient(180deg, #1a2330, #111826); border: 1px solid #2a3646; }
+
+    .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; padding: 28px 0 10px; }
+    .hero h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; margin: 0 0 12px; }
+    .hero p { margin-top: 0; color: var(--muted); }
+    .hero .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+
+    .grid { display: grid; gap: 16px; }
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid.cols-3 { grid-template-columns: 1fr; }
+      .grid.cols-2 { grid-template-columns: 1fr; }
+    }
+
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+    .card h3 { margin-top: 0; font-size: 1.1rem; }
+    .muted { color: var(--muted); }
+    .pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); padding: 6px 10px; border-radius: 999px; font-size: 0.9rem; color: var(--muted); }
+
+    .section { padding: 22px 0; }
+    .section h2 { font-size: 1.4rem; margin: 0 0 12px; }
+
+    .list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .list li { display: flex; align-items: flex-start; gap: 10px; }
+    .check { width: 18px; height: 18px; border-radius: 6px; background: #1f2834; border: 1px solid #2a3646; display: inline-grid; place-items: center; margin-top: 2px; }
+    .check svg { width: 12px; height: 12px; }
+
+    footer { padding: 28px 0 12px; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--line); margin-top: 24px; }
+    .small { font-size: 0.9rem; }
+
+    /* Logo styling */
+    .logo-wrap { width: 40px; height: 40px; border-radius: 12px; background: radial-gradient(45% 45% at 50% 50%, #f2cc8f33 0%, #1b1f27 70%); border: 1px solid #2a2f3a; display: grid; place-items: center; }
+    .lantern svg { display: block; }
+
+    /* Contact card */
+    .contact { display: grid; gap: 12px; }
+    .contact a { color: var(--fg); text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+
+    /* Badges */
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .badge { font-size: 0.85rem; border: 1px solid var(--line); padding: 6px 10px; border-radius: 999px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#top" aria-label="Ledger — From Gravel Hill home">
+        <span class="logo-wrap lantern" aria-hidden="true">
+          <!-- Inline SVG logo: a simple lantern echoing the From Gravel Hill style -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lantern logo">
+            <defs>
+              <linearGradient id="glow" x1="12" y1="6" x2="12" y2="18" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#f2cc8f"/>
+                <stop offset="1" stop-color="#f2cc8f" stop-opacity="0.2"/>
+              </linearGradient>
+            </defs>
+            <path d="M8 4h8" stroke="#f2cc8f" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="7" y="5" width="10" height="14" rx="2" stroke="#cbd5e1" stroke-width="1.5"/>
+            <path d="M10 8h4v8h-4z" fill="url(#glow)" stroke="#94a3b8" stroke-width="1.2"/>
+            <path d="M6 12h-2m16 0h-2" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M9 19h6" stroke="#64748b" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="1.5" fill="#ffd9a0"/>
+          </svg>
+        </span>
+        <div>
+          <h1>Ledger — From Gravel Hill</h1>
+          <div class="tag">Practical, reliable books for small businesses on PEI</div>
+        </div>
+      </a>
+      <nav>
+        <a class="btn" href="#services">Services</a>
+        <a class="btn" href="#about">About</a>
+        <a class="btn primary" href="#contact">Get a quote</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h2>Make sense of the numbers. Keep your focus on the work.</h2>
+        <p>Hi, I’m <strong>Marc MacArthur</strong>. I help small businesses keep tidy, trustworthy books — without the fuss. I’m hands‑on, detail‑minded, and comfortable working with <strong>Sage 50 (Canadian)</strong> for day‑to‑day bookkeeping tasks.</p>
+        <div class="badges" aria-label="Capabilities">
+          <span class="badge">Bank & card reconciliations</span>
+          <span class="badge">Payables & receipts</span>
+          <span class="badge">Invoice tracking</span>
+          <span class="badge">Expense categorization</span>
+          <span class="badge">Simple month‑end reports</span>
+        </div>
+        <p class="muted small" style="margin-top:10px">I’m not a CPA and I don’t offer tax filing or assurance services — I focus on accurate daily records you (and your accountant) can trust.</p>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap: wrap;">
+          <a class="btn primary" href="#contact">Request a quote</a>
+          <a class="btn" href="#scope">What I do & don’t do</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="pill" style="margin-bottom:10px;">Sage 50 (Canadian) • Desktop</div>
+        <ul class="list">
+          <li><span class="check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#89b4fa" stroke-width="2" stroke-linecap="round"/></svg></span><div>Enter bills, record payments, match receipts</div></li>
+          <li><span class="check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#89b4fa" stroke-width="2" stroke-linecap="round"/></svg></span><div>Monthly bank/credit card reconciliations</div></li>
+          <li><span class="check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#89b4fa" stroke-width="2" stroke-linecap="round"/></svg></span><div>Basic reporting: vendor ledgers, expense summaries</div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <div class="grid cols-3">
+        <div class="card"><h3>Monthly Bookkeeping</h3><p class="muted">Consistent entry of bills, payments, deposits, and journal entries with regular reconciliations.</p></div>
+        <div class="card"><h3>Cleanup & Catch‑Up</h3><p class="muted">Bring months of paperwork up to date and organize documents for a clean hand‑off.</p></div>
+        <div class="card"><h3>Simple Reports</h3><p class="muted">Vendor summaries, expense breakdowns, and period‑end snapshots your accountant can use.</p></div>
+      </div>
+    </section>
+
+    <section id="scope" class="section">
+      <h2>Scope & Boundaries</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>What I Do</h3>
+          <ul class="list">
+            <li><span class="check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#89b4fa" stroke-width="2" stroke-linecap="round"/></svg></span><div>Day‑to‑day entry in Sage 50 (Canadian)</div></li>
+            <li><span class="check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#89b4fa" stroke-width="2" stroke-linecap="round"/></svg></span><div>Bank & credit card reconciliations</div></li>
+            <li><span class="check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#89b4fa" stroke-width="2" stroke-linecap="round"/></svg></span><div>Accounts payable tracking & vendor statements</div></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What I Don’t Do</h3>
+          <p class="muted">I’m not a CPA. I don’t offer payroll, tax preparation, or assurance services. I focus on accurate books that help you and your accountant make decisions with confidence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>A practical, self‑taught approach</h3>
+          <p class="muted">I came to bookkeeping through hands‑on work rather than formal schooling. That means I value clarity, neat records, and steady communication. If I’m not sure about something, I say so and look it up — and I keep you in the loop.</p>
+        </div>
+        <div class="card">
+          <h3>Tools & Workflow</h3>
+          <p class="muted">I primarily use <strong>Sage 50 (Canadian)</strong> on desktop. I’m comfortable with shared folders, emailed PDFs, and scanned receipts. We’ll agree on a simple monthly checklist so nothing gets missed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="grid cols-2">
+        <div class="card contact">
+          <p class="muted">Based in Prince Edward Island. Available remotely across the Maritimes.</p>
+          <div>
+            <strong>Email</strong><br/>
+            <a href="mailto:ledger@fromgravelhill.ca">ledger@fromgravelhill.ca</a>
+          </div>
+          <div>
+            <strong>Availability</strong><br/>
+            <span class="muted">New clients: limited openings this month.</span>
+          </div>
+          <div>
+            <a class="btn primary" href="mailto:ledger@fromgravelhill.ca?subject=Bookkeeping%20Quote%20Request&body=Tell%20me%20a%20bit%20about%20your%20business%2C%20your%20current%20software%2C%20and%20what%20you%20need%20help%20with.">Request a quote by email</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Getting Started</h3>
+          <ol class="muted" style="margin:0; padding-left: 18px;">
+            <li>Quick call or email to outline your needs</li>
+            <li>Simple checklist & secure document handoff</li>
+            <li>First month done together, then ongoing monthly cadence</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Gravel Hill Bookkeeping • Ledger — From Gravel Hill</div>
+      <div class="small">This site keeps things simple — no cookies, no trackers.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
